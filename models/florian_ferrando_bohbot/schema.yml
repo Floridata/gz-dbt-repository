@@ -1,0 +1,37 @@
+version: 2
+
+sources:
+  - name: raw
+    description: ceci est un test pour récupérer le projet dans DBT
+    schema: le_wagon_7_dec
+    tables:
+      - name: product
+        description: tables des produits
+        identifier: raw_gz_product
+        columns: 
+          - name: products_id 
+
+      - name: ship
+        description: Table des envois
+        identifier: raw_gz_ship
+        columns: 
+          - name: orders_id 
+  
+      - name: sales
+        description: Table des ventes
+        identifier: raw_gz_sales
+
+models:
+  - name: stg_raw__product
+    columns:
+      - name: products_id
+        tests: 
+        - unique
+        - not_null
+
+  - name: stg_raw__ship
+    columns:
+      - name: orders_id
+        tests: 
+        - unique
+        - not_null
