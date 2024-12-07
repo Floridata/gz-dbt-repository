@@ -2,11 +2,11 @@ with
 
 source as (
 
-    select * from {{ source('le_wagon_7_dec', 'raw_sales') }}
+    select * from {{ source('raw', 'sales') }}
 
 ),
 
-renamed as (sales
+renamed as (
 
     select
         date_date,

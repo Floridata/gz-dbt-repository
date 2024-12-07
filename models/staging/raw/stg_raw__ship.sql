@@ -2,18 +2,18 @@ with
 
 source as (
 
-    select * from {{ source('le_wagon_7_dec', 'raw_gz_ship') }}
+    select * from {{ source('raw', 'ship') }}
 
 ),
 
-renamed as (ship
+renamed as (
 
     select
         orders_id,
         shipping_fee,
         shipping_fee_1,
         logcost,
-        ship_cost
+        CAST (ship_cost AS INT64) ship_cost
 
     from source
 
