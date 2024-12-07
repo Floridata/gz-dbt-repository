@@ -5,6 +5,6 @@ sources:
     description: ceci est un test pour récupérer le projet dans DBT
     tables:
     - name: raw_gz_product
-    - name: raw_gz_ship 
-    - name: raw_sales 
+    - name: raw_gz_ship
+    - name: raw_sales
 

@@ -6,11 +6,11 @@ source as (
 
 ),
 
-renamed as (product
+renamed as (
 
     select
-        products_id,
-        purchse_price
+        products_id, 
+        CAST (purchse_price AS FLOAT64) as purchase_price
 
     from source
 
